@@ -8,6 +8,9 @@
           :checked="chekced"
           @change="change">
       </span>
+
+      <!-- 标签文字 -->
+      <slot></slot>
     </label>
   </div>
 </template>
@@ -36,6 +39,12 @@
     data() {
       return {
         currentValue: this.value
+      }
+    },
+    watch: {
+      // 父级修改value响应
+      value(val) {
+        
       }
     },
     methods: {
