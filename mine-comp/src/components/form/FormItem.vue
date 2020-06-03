@@ -52,12 +52,12 @@ export default {
     // 重置数据
     // 重置有问题  
     resetField() {
-      // this.validateState = '';
-      // this.validateMessage = '';
-
+      this.validateState = '';
+      this.validateMessage = '';
       console.log(this.form.model[this.prop]);
-      this.form.model[this.prop] = this.initialValue;
       
+      this.form.model[this.prop] = this.initialValue;
+      console.log(this.form.model.__ob__.dep.notify())
       // this.form.model[this.prop] = this.initialValue;
     },
 

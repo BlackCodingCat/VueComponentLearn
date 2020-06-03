@@ -18,8 +18,15 @@ export default {
   mixins: [Emitter],
   data() {
     return {
-      currentValue: this.value // 初始化currentValue
+      currentValue: this.value
     };
+  },
+  watch: {
+    value: {
+      handler(value) {
+        this.currentValue = value;
+      }
+    }
   },
   methods: {
     // input框有输入时即会触发
